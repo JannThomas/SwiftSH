@@ -51,7 +51,7 @@ open class SSHSession<T: RawLibrary> {
     public init?(host: String, port: UInt16 = 22) {
         self.host = host
         self.port = port
-        self.log = ConsoleLogger(level: .debug, enabled: true)
+        self.log = ConsoleLogger(level: .debug, enabled: false)
         self.queue = Queue(label: "SSH Queue", concurrent: false)
         guard let session = T.newSession() else {
             return nil
